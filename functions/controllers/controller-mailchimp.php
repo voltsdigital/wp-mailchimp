@@ -65,8 +65,13 @@ class ControllerMailChimp{
 
         $emails = array( 'email' => $email );
 
-        return $this->mc->lists->subscribe( $listaId, $emails );
-        //$this->mc->lists->unsubscribe( $lista['id'], $emails );
+        try{
+            $result = $this->mc->lists->subscribe( $listaId , $emails );
+            return $result;
+        }
+        catch( Exception $e ){
+            return false;
+        }
     }
 }
 
