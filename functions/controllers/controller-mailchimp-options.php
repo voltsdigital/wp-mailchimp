@@ -53,13 +53,14 @@ class ControllerMailChimpOptions{
                     'tab'   => 'mailchimp_options',
                     'title' => 'Opções do MailChimp',
                     'fields' => array(
-                        array(
-                            'id' => 'mailchimp_is_enable',
-                            'label' => 'Habilitar',
-                            'type' => 'checkbox',
-                            'default'     => '',
-                            'description' => ''
-                        ),
+                        // Future
+                        // array(
+                        //     'id' => 'mailchimp_is_enable',
+                        //     'label' => 'Habilitar',
+                        //     'type' => 'checkbox',
+                        //     'default'     => '',
+                        //     'description' => ''
+                        // ),
                         array(
                             'id' => 'mailchimp_api_key',
                             'label' => 'Api Key',
