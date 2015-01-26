@@ -45,7 +45,7 @@ class ControllerMailChimpOptions{
         );
 
         $lists = apply_filters( 'mc_get_lists' , '' );
-        $lists = apply_filters( 'array_to_select' , $lists, 'id' , 'name' );
+        $lists = apply_filters( 'mc_array_to_select' , $lists, 'id' , 'name' )
 
         $options->set_fields(
             array(

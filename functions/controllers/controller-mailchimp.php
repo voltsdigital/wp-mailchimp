@@ -12,6 +12,7 @@ class ControllerMailChimp{
         //add_action( 'init' , array( $this, 'init' ) , 10 );
         add_action( 'mc_subscribe_member' , array( $this, 'subscribeMember' ) , 10, 2 );
         add_filter( 'mc_get_lists' , array( $this , 'getLists' ) );
+        add_filter( 'mc_array_to_select' , array( $this , 'array_to_select' ) , 10 , 3 );
     }
 
     public function connect(){
@@ -72,6 +73,20 @@ class ControllerMailChimp{
         catch( Exception $e ){
             return false;
         }
+    }
+
+    public function array_to_select( $array , $idField, $nameField){
+
+        if( count( $array ) == 0 ){
+            return null;
+        }
+
+        $select = array();
+        foreach( $array as $item ){
+            $select[ $item[ $idField ] ] = $item[ $nameField ];
+        }
+
+        return $select;
     }
 }
 
